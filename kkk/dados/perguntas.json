@@ -1,0 +1,46 @@
+[  
+  {  
+    "tema": "Phishing",  
+    "dificuldade": "facil",  
+    "pergunta": "O que caracteriza um e-mail de phishing?",  
+    "opcoes": [  
+      "Solicitação de dados pessoais urgentes",  
+      "Comunicação oficial de bancos",  
+      "Promoções legítimas"  
+    ],  
+    "correta": 0  
+  },  
+  {  
+    "tema": "Senhas",  
+    "dificuldade": "facil",  
+    "pergunta": "Qual é a característica de uma senha forte?",  
+    "opcoes": [  
+      "Usar sequências numéricas",  
+      "Combinar letras, números e símbolos",  
+      "Usar o nome do usuário"  
+    ],  
+    "correta": 1  
+  },  
+  {  
+    "tema": "Compras Online",  
+    "dificuldade": "medio",  
+    "pergunta": "Como identificar um site seguro para compras?",  
+    "opcoes": [  
+      "Presença de 'http://' no link",  
+      "Cadeado verde na barra de endereço",  
+      "Pop-ups de ofertas"  
+    ],  
+    "correta": 1  
+  },  
+  {  
+    "tema": "Golpes Telefônicos",  
+    "dificuldade": "dificil",  
+    "pergunta": "O que fazer ao receber uma ligação suspeita?",  
+    "opcoes": [  
+      "Fornecer dados para verificação",  
+      "Desligar e contatar a instituição",  
+      "Confirmar informações pessoais"  
+    ],  
+    "correta": 1  
+  }  
+]  
