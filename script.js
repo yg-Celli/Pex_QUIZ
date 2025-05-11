@@ -1,4 +1,4 @@
-// script.js - Código Atualizado e Simplificado
+// script.js - Código Completo e Atualizado (Compatível com Acentos)
 
 /* ========== CONFIGURAÇÕES ========== */
 const config = {
@@ -33,16 +33,28 @@ async function iniciarQuiz() {
             </div>
         `;
 
+        // Carrega o JSON
         const resposta = await fetch(config.caminhoJSON);
-        if (!resposta.ok) throw new Error('Falha ao carregar perguntas');
+        if (!resposta.ok) throw new Error('Arquivo não encontrado!');
         
         const dados = await resposta.json();
-        if (!Array.isArray(dados)) throw new Error("Formato de arquivo inválido");
+        if (!Array.isArray(dados)) throw new Error("Formato inválido");
 
-        // Filtra perguntas pela dificuldade escolhida
-        quiz.perguntas = dados.filter(p => p.dificuldade === quiz.dificuldade);
+        // Normaliza as dificuldades (remove acentos e espaços)
+        const normalizarTexto = (texto) => {
+            return texto.toLowerCase()
+                .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos
+                .trim();
+        };
+
+        // Filtra as perguntas
+        const dificuldadeSelecionada = normalizarTexto(quiz.dificuldade);
+        quiz.perguntas = dados.filter(p => 
+            normalizarTexto(p.dificuldade) === dificuldadeSelecionada
+        );
+
         if (quiz.perguntas.length === 0) throw new Error('Nenhuma pergunta encontrada');
-
+        
         mostrarPergunta();
 
     } catch (erro) {
