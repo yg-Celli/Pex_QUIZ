@@ -1,46 +1,1101 @@
-[  
-  {  
-    "tema": "Phishing",  
-    "dificuldade": "facil",  
-    "pergunta": "O que caracteriza um e-mail de phishing?",  
-    "opcoes": [  
-      "Solicitação de dados pessoais urgentes",  
-      "Comunicação oficial de bancos",  
-      "Promoções legítimas"  
-    ],  
-    "correta": 0  
-  },  
-  {  
-    "tema": "Senhas",  
-    "dificuldade": "facil",  
-    "pergunta": "Qual é a característica de uma senha forte?",  
-    "opcoes": [  
-      "Usar sequências numéricas",  
-      "Combinar letras, números e símbolos",  
-      "Usar o nome do usuário"  
-    ],  
-    "correta": 1  
-  },  
-  {  
-    "tema": "Compras Online",  
-    "dificuldade": "medio",  
-    "pergunta": "Como identificar um site seguro para compras?",  
-    "opcoes": [  
-      "Presença de 'http://' no link",  
-      "Cadeado verde na barra de endereço",  
-      "Pop-ups de ofertas"  
-    ],  
-    "correta": 1  
-  },  
-  {  
-    "tema": "Golpes Telefônicos",  
-    "dificuldade": "dificil",  
-    "pergunta": "O que fazer ao receber uma ligação suspeita?",  
-    "opcoes": [  
-      "Fornecer dados para verificação",  
-      "Desligar e contatar a instituição",  
-      "Confirmar informações pessoais"  
-    ],  
-    "correta": 1  
-  }  
-]  
+[
+  {
+    "categoria": "Compartilhamento de Informações com Terceiros",
+    "dificuldade": "fácil",
+    "pergunta": "O que é compartilhamento de informações com terceiros?",
+    "opcoes": [
+      "Guardar todos os dados em um local seguro.",
+      "Transferir ou disponibilizar dados para pessoas ou organizações externas.",
+      "Criptografar informações antes de enviá-las por e-mail."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Compartilhamento de informações com terceiros refere-se à transferência ou disponibilização de dados para pessoas ou organizações que não fazem parte da sua organização ou círculo direto de confiança."
+  },
+  {
+    "categoria": "Compartilhamento de Informações com Terceiros",
+    "dificuldade": "fácil",
+    "pergunta": "Por que é perigoso compartilhar senhas com terceiros?",
+    "opcoes": [
+      "Porque eles podem esquecer a senha.",
+      "Porque eles podem usar a senha para acessar suas contas sem permissão.",
+      "Porque senhas são difíceis de lembrar."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Compartilhar senhas pode levar a acessos não autorizados, já que a pessoa pode usar suas credenciais para fins maliciosos ou acidentalmente comprometer sua conta."
+  },
+  {
+    "categoria": "Compartilhamento de Informações com Terceiros",
+    "dificuldade": "fácil",
+    "pergunta": "Qual é um exemplo de informação sensível que não deve ser compartilhada?",
+    "opcoes": [
+      "Nome completo.",
+      "Endereço de e-mail.",
+      "Número de cartão de crédito."
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "Números de cartão de crédito são informações altamente sensíveis que podem ser usadas para fraudes financeiras se caírem em mãos erradas."
+  },
+  {
+    "categoria": "Compartilhamento de Informações com Terceiros",
+    "dificuldade": "fácil",
+    "pergunta": "O que é phishing?",
+    "opcoes": [
+      "Uma técnica para pescar peixes.",
+      "Um tipo de ataque onde criminosos tentam obter informações pessoais por meio de e-mails falsos.",
+      "Um método seguro para compartilhar dados."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Phishing é uma forma de fraude onde criminosos se passam por entidades confiáveis para enganar as vítimas e roubar informações sensíveis."
+  },
+  {
+    "categoria": "Compartilhamento de Informações com Terceiros",
+    "dificuldade": "fácil",
+    "pergunta": "Qual é a melhor prática ao receber um e-mail solicitando informações pessoais?",
+    "opcoes": [
+      "Responder imediatamente.",
+      "Verificar a autenticidade do remetente antes de responder.",
+      "Encaminhar o e-mail para amigos."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Sempre verifique a autenticidade do remetente antes de fornecer qualquer informação pessoal, pois e-mails fraudulentos são comuns."
+  },
+  {
+    "categoria": "Compartilhamento de Informações com Terceiros",
+    "dificuldade": "médio",
+    "pergunta": "O que é engenharia social?",
+    "opcoes": [
+      "Uma técnica para construir prédios.",
+      "Um método onde criminosos manipulam pessoas para obter informações confidenciais.",
+      "Uma forma de compartilhar dados de forma segura."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Engenharia social envolve manipulação psicológica para enganar pessoas e obter acesso a informações confidenciais ou sistemas."
+  },
+  {
+    "categoria": "Compartilhamento de Informações com Terceiros",
+    "dificuldade": "médio",
+    "pergunta": "Por que é importante verificar as permissões de aplicativos antes de conceder acesso a dados pessoais?",
+    "opcoes": [
+      "Para evitar que aplicativos acessem informações desnecessárias.",
+      "Porque todos os aplicativos são seguros.",
+      "Para aumentar o espaço de armazenamento do celular."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "Aplicativos podem solicitar permissões excessivas, aumentando riscos de privacidade. Verificar e limitar permissões ajuda a proteger seus dados."
+  },
+  {
+    "categoria": "Compartilhamento de Informações com Terceiros",
+    "dificuldade": "médio",
+    "pergunta": "O que é criptografia e como ela protege as informações compartilhadas?",
+    "opcoes": [
+      "Um método para esconder informações em fotos.",
+      "Uma técnica que transforma dados em códigos ilegíveis para quem não tem autorização.",
+      "Uma forma de compartilhar dados publicamente."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A criptografia codifica dados de forma que apenas pessoas autorizadas possam lê-los, protegendo a informação durante transmissão ou armazenamento."
+  },
+  {
+    "categoria": "Compartilhamento de Informações com Terceiros",
+    "dificuldade": "médio",
+    "pergunta": "Qual é o risco de usar redes públicas de Wi-Fi para compartilhar informações confidenciais?",
+    "opcoes": [
+      "Nenhum risco, pois todas as redes Wi-Fi são seguras.",
+      "Criminosos podem interceptar os dados transmitidos.",
+      "A conexão pode ficar mais lenta."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Redes públicas são frequentemente inseguras, permitindo que hackers interceptem dados não criptografados, como senhas e informações bancárias."
+  },
+  {
+    "categoria": "Compartilhamento de Informações com Terceiros",
+    "dificuldade": "médio",
+    "pergunta": "O que é uma política de privacidade e por que é importante lê-la antes de compartilhar dados?",
+    "opcoes": [
+      "Um documento que explica como uma empresa coleta, usa e protege seus dados.",
+      "Um contrato para usar redes sociais.",
+      "Uma lista de regras para criar senhas seguras."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "A política de privacidade detalha como uma organização lida com seus dados, ajudando você a entender os riscos antes de compartilhar informações."
+  },
+  {
+    "categoria": "Compartilhamento de Informações com Terceiros",
+    "dificuldade": "difícil",
+    "pergunta": "O que é vazamento de dados e como ele pode ocorrer ao compartilhar informações com terceiros?",
+    "opcoes": [
+      "Quando dados são perdidos acidentalmente.",
+      "Quando informações confidenciais são expostas devido a falhas de segurança ou más práticas.",
+      "Quando dados são compartilhados apenas com pessoas autorizadas."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Vazamentos ocorrem quando informações são expostas indevidamente, muitas vezes por falhas em sistemas de terceiros ou compartilhamento inadequado."
+  },
+  {
+    "categoria": "Compartilhamento de Informações com Terceiros",
+    "dificuldade": "difícil",
+    "pergunta": "O que é GDPR e como ele impacta o compartilhamento de informações com terceiros?",
+    "opcoes": [
+      "Uma lei brasileira sobre proteção de dados.",
+      "Um regulamento europeu que define regras rigorosas para o tratamento de dados pessoais.",
+      "Um tipo de vírus que rouba informações."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O GDPR (Regulamento Geral sobre a Proteção de Dados) impõe regras estritas sobre como empresas devem coletar, armazenar e compartilhar dados pessoais de cidadãos da UE."
+  },
+  {
+    "categoria": "Compartilhamento de Informações com Terceiros",
+    "dificuldade": "difícil",
+    "pergunta": "Qual é a diferença entre dados pessoais e dados sensíveis?",
+    "opcoes": [
+      "Dados pessoais são públicos, e dados sensíveis são privados.",
+      "Dados pessoais incluem nome e e-mail, enquanto dados sensíveis incluem informações como religião ou saúde.",
+      "Não há diferença, são a mesma coisa."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Dados pessoais identificam uma pessoa, enquanto dados sensíveis revelam características íntimas (como saúde ou orientação religiosa) e têm proteção especial."
+  },
+  {
+    "categoria": "Compartilhamento de Informações com Terceiros",
+    "dificuldade": "difícil",
+    "pergunta": "O que é 'shadow IT' e como ele pode aumentar os riscos de compartilhamento de informações?",
+    "opcoes": [
+      "Uso de sistemas de TI não autorizados pela empresa, aumentando riscos de segurança.",
+      "Uma técnica para proteger dados.",
+      "Um tipo de software de criptografia."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "Shadow IT refere-se ao uso de ferramentas não aprovadas pela organização, que podem não ter controles de segurança adequados, elevando riscos de vazamentos."
+  },
+  {
+    "categoria": "Compartilhamento de Informações com Terceiros",
+    "dificuldade": "difícil",
+    "pergunta": "O que é 'zero trust' e como essa abordagem pode melhorar a segurança no compartilhamento de informações?",
+    "opcoes": [
+      "Um modelo de segurança que assume que nenhum usuário ou sistema é confiável por padrão.",
+      "Uma política que permite o acesso livre a todos os dados.",
+      "Um método para compartilhar senhas com terceiros."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "Zero Trust exige verificação contínua de identidade e permissões, reduzindo riscos mesmo em compartilhamentos internos ou com terceiros."
+  },
+  {
+    "categoria": "Compartilhamento de Informações com Terceiros",
+    "dificuldade": "difícil",
+    "pergunta": "O que é um ataque de 'man-in-the-middle' e como ele pode ocorrer durante o compartilhamento de informações?",
+    "opcoes": [
+      "Quando um criminoso intercepta a comunicação entre duas partes para roubar dados.",
+      "Quando um vírus infecta um computador.",
+      "Quando um terceiro compartilha informações sem permissão."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "Nesse ataque, um hacker se posiciona entre duas partes comunicantes, capturando ou alterando dados trafegados, como em redes Wi-Fi inseguras."
+  },
+  {
+    "categoria": "Compartilhamento de Informações com Terceiros",
+    "dificuldade": "difícil",
+    "pergunta": "Por que é importante ter um plano de resposta a incidentes em caso de vazamento de dados?",
+    "opcoes": [
+      "Para evitar que os dados sejam perdidos para sempre.",
+      "Para minimizar os danos e restaurar a segurança rapidamente.",
+      "Para compartilhar informações com mais pessoas."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Um plano bem estruturado ajuda a conter o vazamento, notificar afetados e mitigar impactos legais e financeiros."
+  },
+  {
+    "categoria": "Compartilhamento de Informações com Terceiros",
+    "dificuldade": "difícil",
+    "pergunta": "O que é 'doxxing' e como ele está relacionado ao compartilhamento de informações?",
+    "opcoes": [
+      "A prática de expor informações pessoais de alguém sem consentimento, muitas vezes com fins maliciosos.",
+      "Um método seguro para compartilhar dados.",
+      "Uma técnica de criptografia."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "Doxxing envolve coletar e divulgar publicamente dados privados (como endereços ou documentos) para assediar ou ameaçar indivíduos."
+  },
+  {
+    "categoria": "Compartilhamento de Informações com Terceiros",
+    "dificuldade": "difícil",
+    "pergunta": "O que é 'tokenização' e como ela pode proteger dados compartilhados com terceiros?",
+    "opcoes": [
+      "Substituir dados sensíveis por tokens que não têm valor real, reduzindo riscos de exposição.",
+      "Um método para compartilhar senhas.",
+      "Uma forma de criptografar e-mails."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "A tokenização troca informações confidenciais (como números de cartão) por identificadores aleatórios, mantendo os dados reais seguros em sistemas autorizados."
+  },
+  {
+    "categoria": "Compartilhamento de Informações com Terceiros",
+    "dificuldade": "difícil",
+    "pergunta": "Qual é o papel da autenticação de dois fatores (2FA) na proteção de informações compartilhadas?",
+    "opcoes": [
+      "Adicionar uma camada extra de segurança, exigindo uma segunda forma de verificação além da senha.",
+      "Permitir o acesso a dados sem senha.",
+      "Compartilhar informações com mais de uma pessoa."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "O 2FA dificulta o acesso não autorizado, pois mesmo que a senha seja comprometida, o invasor precisará de um segundo fator (como um código SMS)."
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {
+    "categoria": "Golpes por Telefone e Falsos Suportes Técnicos",
+    "dificuldade": "fácil",
+    "pergunta": "O que você deve fazer se receber uma ligação de alguém dizendo ser do suporte técnico da sua operadora e pedir sua senha?",
+    "opcoes": [
+      "Fornecer a senha imediatamente.",
+      "Desligar e entrar em contato com a operadora por um canal oficial.",
+      "Anotar a senha e enviar por e-mail."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Nunca forneça senhas por telefone. Empresas legítimas não solicitam informações confidenciais dessa forma. Sempre verifique por canais oficiais."
+  },
+  {
+    "categoria": "Golpes por Telefone e Falsos Suportes Técnicos",
+    "dificuldade": "fácil",
+    "pergunta": "Qual é o principal objetivo de golpistas que ligam se passando por suporte técnico?",
+    "opcoes": [
+      "Oferecer produtos novos.",
+      "Roubar informações pessoais ou dinheiro.",
+      "Fazer uma pesquisa de mercado."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Golpistas buscam acessar dados sensíveis (como senhas ou números de cartão) para cometer fraudes ou vender informações no mercado negro."
+  },
+  {
+    "categoria": "Golpes por Telefone e Falsos Suportes Técnicos",
+    "dificuldade": "fácil",
+    "pergunta": "Se alguém ligar dizendo que seu computador está infectado e pedir acesso remoto, o que você deve fazer?",
+    "opcoes": [
+      "Permitir o acesso para resolver o problema.",
+      "Desligar e não fornecer nenhuma informação.",
+      "Anotar o número e ligar depois."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Acesso remoto permite que golpistas instalem malwares ou roubem dados. Nunca conceda sem verificação independente do problema."
+  },
+  {
+    "categoria": "Golpes por Telefone e Falsos Suportes Técnicos",
+    "dificuldade": "fácil",
+    "pergunta": "O que você deve fazer se receber uma ligação de um número desconhecido pedindo dados pessoais?",
+    "opcoes": [
+      "Fornecer os dados para ajudar no atendimento.",
+      "Desligar e bloquear o número.",
+      "Pedir para ligarem mais tarde."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Ligações não solicitadas pedindo dados pessoais são quase sempre golpes. Bloqueie o número e reporte à operadora."
+  },
+  {
+    "categoria": "Golpes por Telefone e Falsos Suportes Técnicos",
+    "dificuldade": "fácil",
+    "pergunta": "Qual dessas informações NUNCA deve ser compartilhada por telefone?",
+    "opcoes": [
+      "Seu nome completo.",
+      "Sua senha bancária.",
+      "Seu endereço de e-mail."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Senhas bancárias são informações críticas que nunca devem ser compartilhadas, mesmo que o chamador pareça legítimo."
+  },
+  {
+    "categoria": "Golpes por Telefone e Falsos Suportes Técnicos",
+    "dificuldade": "médio",
+    "pergunta": "Qual das seguintes informações NUNCA deve ser compartilhada por telefone, mesmo que a pessoa diga ser de uma empresa confiável?",
+    "opcoes": [
+      "Seu endereço de e-mail.",
+      "Sua senha bancária ou números de cartão de crédito.",
+      "O modelo do seu celular."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Dados financeiros como senhas ou números de cartão são alvos principais de golpistas e nunca devem ser repassados por telefone."
+  },
+  {
+    "categoria": "Golpes por Telefone e Falsos Suportes Técnicos",
+    "dificuldade": "médio",
+    "pergunta": "O que é um golpe comum envolvendo falsos suportes técnicos?",
+    "opcoes": [
+      "Oferecer upgrades gratuitos de software.",
+      "Pedir pagamento antecipado para resolver um problema que não existe.",
+      "Enviar um técnico até sua casa sem aviso prévio."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Golpistas inventam problemas falsos (ex.: 'vírus no PC') e cobram por serviços inexistentes, muitas vezes via acesso remoto."
+  },
+  {
+    "categoria": "Golpes por Telefone e Falsos Suportes Técnicos",
+    "dificuldade": "médio",
+    "pergunta": "Se você receber uma ligação de alguém dizendo ser do banco e pedir para confirmar seus dados, o que você deve fazer?",
+    "opcoes": [
+      "Confirmar os dados para garantir que está tudo certo.",
+      "Desligar e entrar em contato com o banco por um número oficial.",
+      "Fornecer apenas o nome completo."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Bancos não solicitam confirmação de dados por telefone. Use sempre canais oficiais (site, app ou agência) para verificar."
+  },
+  {
+    "categoria": "Golpes por Telefone e Falsos Suportes Técnicos",
+    "dificuldade": "médio",
+    "pergunta": "O que você deve fazer se receber uma ligação de alguém dizendo que ganhou um prêmio, mas precisa pagar uma taxa para recebê-lo?",
+    "opcoes": [
+      "Pagár a taxa para garantir o prêmio.",
+      "Desligar e ignorar a ligação.",
+      "Pedir mais detalhes sobre o prêmio."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Prêmios legítimos não exigem pagamento antecipado. Isso é uma isca para golpes financeiros."
+  },
+  {
+    "categoria": "Golpes por Telefone e Falsos Suportes Técnicos",
+    "dificuldade": "médio",
+    "pergunta": "Por que os golpistas costumam usar nomes de empresas conhecidas em suas ligações?",
+    "opcoes": [
+      "Para parecerem mais confiáveis.",
+      "Para testar a qualidade do atendimento.",
+      "Para oferecer descontos exclusivos."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "Usar marcas conhecidas (como Microsoft ou bancos) aumenta a credibilidade do golpista e a chance de a vítima cair no golpe."
+  },
+  {
+    "categoria": "Golpes por Telefone e Falsos Suportes Técnicos",
+    "dificuldade": "difícil",
+    "pergunta": "Qual é uma forma comum de golpistas convencerem as vítimas a acreditar que são legítimos?",
+    "opcoes": [
+      "Usar nomes de empresas conhecidas e números de telefone que parecem reais.",
+      "Ligar apenas em horários comerciais.",
+      "Enviar um e-mail antes de ligar."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "Golpistas falsificam números de telefone (spoofing) e usam jargões técnicos para imitar atendimentos reais."
+  },
+  {
+    "categoria": "Golpes por Telefone e Falsos Suportes Técnicos",
+    "dificuldade": "difícil",
+    "pergunta": "O que é 'vishing' no contexto de golpes por telefone?",
+    "opcoes": [
+      "Uma técnica para melhorar a qualidade do som em ligações.",
+      "Um tipo de golpe que usa ligações telefônicas para enganar as vítimas.",
+      "Um sistema de segurança para proteger chamadas."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Vishing (voice + phishing) é a versão por telefone do phishing, onde golpistas usam chamadas para roubar dados ou dinheiro."
+  },
+  {
+    "categoria": "Golpes por Telefone e Falsos Suportes Técnicos",
+    "dificuldade": "difícil",
+    "pergunta": "Por que os golpistas costumam pedir acesso remoto ao computador da vítima?",
+    "opcoes": [
+      "Para instalar programas legítimos de segurança.",
+      "Para roubar informações pessoais ou instalar malware.",
+      "Para verificar a velocidade da internet."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Com acesso remoto, criminosos podem instalar keyloggers, ransomware ou transferir dados sigilosos sem o seu conhecimento."
+  },
+  {
+    "categoria": "Golpes por Telefone e Falsos Suportes Técnicos",
+    "dificuldade": "difícil",
+    "pergunta": "O que é um 'número spoofing' no contexto de golpes por telefone?",
+    "opcoes": [
+      "Uma técnica para bloquear ligações indesejadas.",
+      "A falsificação do número de telefone que aparece na tela da vítima.",
+      "Um sistema de gravação de chamadas."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Spoofing permite que golpistas mascararem o número real, exibindo um número falso que parece ser de uma empresa confiável."
+  },
+  {
+    "categoria": "Golpes por Telefone e Falsos Suportes Técnicos",
+    "dificuldade": "difícil",
+    "pergunta": "Qual é o risco de fornecer informações pessoais a um falso suporte técnico?",
+    "opcoes": [
+      "Nenhum, pois eles só querem ajudar.",
+      "Roubo de identidade ou perda financeira.",
+      "Aumento do número de ligações de telemarketing."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Dados pessoais podem ser usados para fraudes bancárias, abertura de contas falsas ou chantagens."
+  },
+  {
+    "categoria": "Golpes por Telefone e Falsos Suportes Técnicos",
+    "dificuldade": "difícil",
+    "pergunta": "O que você deve fazer se suspeitar que caiu em um golpe por telefone?",
+    "opcoes": [
+      "Ignorar e esperar que o problema se resolva sozinho.",
+      "Entrar em contato com sua instituição financeira e relatar o ocorrido.",
+      "Ligar de volta para o golpista para confrontá-lo."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Agir rápido pode evitar maiores prejuízos. Bancos podem bloquear transações suspeitas, e autoridades podem rastrear golpistas."
+  },
+  {
+    "categoria": "Golpes por Telefone e Falsos Suportes Técnicos",
+    "dificuldade": "difícil",
+    "pergunta": "Qual é o objetivo principal de um golpe de falso suporte técnico?",
+    "opcoes": [
+      "Melhorar a experiência do usuário.",
+      "Roubar dados ou dinheiro da vítima.",
+      "Coletar feedback sobre serviços."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O alvo final é sempre financeiro, seja por extorsão direta, venda de dados no mercado negro ou acesso a contas bancárias."
+  },
+  {
+    "categoria": "Golpes por Telefone e Falsos Suportes Técnicos",
+    "dificuldade": "difícil",
+    "pergunta": "O que é uma 'engenharia social' no contexto de golpes por telefone?",
+    "opcoes": [
+      "Uma técnica para construir redes de telefonia.",
+      "O uso de manipulação psicológica para enganar as vítimas.",
+      "Um sistema de segurança para proteger ligações."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Engenharia social explora a confiança ou medo da vítima (ex.: 'seu computador está infectado!') para obter informações ou acesso."
+  },
+  {
+    "categoria": "Golpes por Telefone e Falsos Suportes Técnicos",
+    "dificuldade": "difícil",
+    "pergunta": "Por que os golpistas costumam criar um senso de urgência em suas ligações?",
+    "opcoes": [
+      "Para garantir que a vítima pense antes de agir.",
+      "Para pressionar a vítima a tomar decisões rápidas e erradas.",
+      "Para testar a paciência da vítima."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Urgência ('sua conta será bloqueada em 5 minutos!') impede a vítima de raciocinar claramente ou verificar a autenticidade da ligação."
+  },
+  {
+    "categoria": "Golpes por Telefone e Falsos Suportes Técnicos",
+    "dificuldade": "difícil",
+    "pergunta": "O que é uma medida eficaz para se proteger de golpes por telefone?",
+    "opcoes": [
+      "Compartilhar menos informações nas redes sociais.",
+      "Nunca atender ligações de números desconhecidos.",
+      "Verificar a identidade do chamador por canais oficiais antes de fornecer qualquer informação."
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "Sempre confirme a identidade do chamador ligando para o serviço oficial da empresa (não use números fornecidos pelo suspeito)."
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {
+    "categoria": "Phishing e Comunicações Fraudulentas",
+    "dificuldade": "fácil",
+    "pergunta": "Phishing é um tipo de ataque cibernético que usa e-mails falsos para enganar as vítimas.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Phishing de fato utiliza comunicações falsas, principalmente e-mails, para enganar usuários."
+  },
+  {
+    "categoria": "Phishing e Comunicações Fraudulentas",
+    "dificuldade": "fácil",
+    "pergunta": "Um e-mail de phishing pode conter links para sites falsos que imitam páginas legítimas.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Links falsos que parecem legítimos são uma característica comum de e-mails de phishing."
+  },
+  {
+    "categoria": "Phishing e Comunicações Fraudulentas",
+    "dificuldade": "fácil",
+    "pergunta": "É seguro clicar em links de e-mails enviados por bancos ou instituições financeiras.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "Nunca clique em links de e-mails suspeitos. Acesse sempre diretamente o site oficial."
+  },
+  {
+    "categoria": "Phishing e Comunicações Fraudulentas",
+    "dificuldade": "fácil",
+    "pergunta": "Phishing pode ser feito apenas por e-mail, não por mensagens de texto ou redes sociais.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "Phishing pode ocorrer por SMS (smishing), redes sociais e até ligações telefônicas (vishing)."
+  },
+  {
+    "categoria": "Phishing e Comunicações Fraudulentas",
+    "dificuldade": "fácil",
+    "pergunta": "Verificar o endereço de e-mail do remetente pode ajudar a identificar um e-mail de phishing.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Remetentes com erros ortográficos ou domínios estranhos são sinais de alerta."
+  },
+  {
+    "categoria": "Phishing e Comunicações Fraudulentas",
+    "dificuldade": "fácil",
+    "pergunta": "Mensagens de phishing frequentemente usam urgência ou ameaças para pressionar a vítima.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Frases como 'sua conta será bloqueada em 24 horas' são táticas comuns."
+  },
+  {
+    "categoria": "Phishing e Comunicações Fraudulentas",
+    "dificuldade": "fácil",
+    "pergunta": "Um site seguro sempre começa com 'http://' e não 'https://'.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "O 's' em 'https://' indica que a conexão é criptografada e mais segura."
+  },
+  {
+    "categoria": "Phishing e Comunicações Fraudulentas",
+    "dificuldade": "fácil",
+    "pergunta": "Nunca é necessário atualizar seus dados pessoais por e-mail, mesmo que a mensagem pareça legítima.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Empresas sérias nunca pedem atualizações de dados sensíveis por e-mail."
+  },
+  {
+    "categoria": "Phishing e Comunicações Fraudulentas",
+    "dificuldade": "médio",
+    "pergunta": "Spear phishing é um tipo de ataque direcionado a uma pessoa ou organização específica.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Diferente do phishing genérico, o spear phishing é personalizado para o alvo."
+  },
+  {
+    "categoria": "Phishing e Comunicações Fraudulentas",
+    "dificuldade": "médio",
+    "pergunta": "Um e-mail de phishing pode conter anexos maliciosos que instalam vírus no computador.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Anexos como .exe ou .zip podem conter malware."
+  },
+  {
+    "categoria": "Phishing e Comunicações Fraudulentas",
+    "dificuldade": "médio",
+    "pergunta": "Usar autenticação de dois fatores (2FA) pode ajudar a proteger contra ataques de phishing.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Mesmo que a senha seja roubada, o 2FA adiciona uma camada extra de proteção."
+  },
+  {
+    "categoria": "Phishing e Comunicações Fraudulentas",
+    "dificuldade": "médio",
+    "pergunta": "Phishing só é realizado por indivíduos, nunca por organizações criminosas.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "Grupos criminosos organizados frequentemente realizam ataques de phishing em larga escala."
+  },
+  {
+    "categoria": "Phishing e Comunicações Fraudulentas",
+    "dificuldade": "médio",
+    "pergunta": "Um site com um cadeado na barra de endereço é sempre seguro e confiável.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "O cadeado indica apenas que a conexão é criptografada, não que o site é legítimo."
+  },
+  {
+    "categoria": "Phishing e Comunicações Fraudulentas",
+    "dificuldade": "médio",
+    "pergunta": "Mensagens de phishing podem usar logotipos e designs idênticos aos de empresas reais.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Golpistas copiam cuidadosamente elementos visuais para parecerem autênticos."
+  },
+  {
+    "categoria": "Phishing e Comunicações Fraudulentas",
+    "dificuldade": "médio",
+    "pergunta": "Phishing é uma técnica usada apenas para roubar senhas, não informações financeiras.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "Phishing pode visar dados financeiros, pessoais ou até acesso a sistemas corporativos."
+  },
+  {
+    "categoria": "Phishing e Comunicações Fraudulentas",
+    "dificuldade": "difícil",
+    "pergunta": "Phishing baseado em voz (vishing) e phishing baseado em SMS (smishing) são variações menos comuns de ataques de phishing.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "Vishing e smishing são tão comuns quanto o phishing por e-mail atualmente."
+  },
+  {
+    "categoria": "Phishing e Comunicações Fraudulentas",
+    "dificuldade": "difícil",
+    "pergunta": "Ataques de phishing podem explorar vulnerabilidades em navegadores para roubar informações sem interação do usuário.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Exploits em navegadores podem comprometer sistemas sem ação do usuário."
+  },
+  {
+    "categoria": "Phishing e Comunicações Fraudulentas",
+    "dificuldade": "difícil",
+    "pergunta": "Phishing pode ser usado como parte de um ataque maior, como o ransomware.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Phishing é frequentemente o primeiro passo para distribuir ransomware ou outros malwares."
+  },
+  {
+    "categoria": "Phishing e Comunicações Fraudulentas",
+    "dificuldade": "difícil",
+    "pergunta": "Ataques de phishing sempre dependem de erros humanos e não podem ser automatizados.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "Muitos ataques de phishing são automatizados usando ferramentas sofisticadas."
+  },
+  {
+    "categoria": "Phishing e Comunicações Fraudulentas",
+    "dificuldade": "difícil",
+    "pergunta": "Ataques de phishing podem ser prevenidos apenas com software antivírus, sem necessidade de treinamento de usuários.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "A conscientização dos usuários é essencial, pois muitos ataques contornam proteções técnicas."
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {
+    "categoria": "Proteção de Senhas e Contas Pessoais",
+    "dificuldade": "fácil",
+    "pergunta": "Usar a mesma senha para várias contas é uma prática segura.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "Se uma conta for comprometida, todas as outras com a mesma senha estarão em risco."
+  },
+  {
+    "categoria": "Proteção de Senhas e Contas Pessoais",
+    "dificuldade": "fácil",
+    "pergunta": "Senhas longas e complexas são mais difíceis de serem quebradas.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Senhas com 12+ caracteres, incluindo símbolos, são significativamente mais seguras."
+  },
+  {
+    "categoria": "Proteção de Senhas e Contas Pessoais",
+    "dificuldade": "fácil",
+    "pergunta": "Incluir informações pessoais, como o nome do seu animal de estimação, em uma senha é seguro.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "Dados pessoais são fáceis de adivinhar ou descobrir em redes sociais."
+  },
+  {
+    "categoria": "Proteção de Senhas e Contas Pessoais",
+    "dificuldade": "fácil",
+    "pergunta": "Usar a mesma senha para várias contas é seguro?",
+    "tipo": "escala",
+    "respostaCorreta": 1,
+    "escala": "1-5 (1 = nada seguro)",
+    "explicacao": "Reutilizar senhas é extremamente arriscado. Nota 1 na escala de segurança."
+  },
+  {
+    "categoria": "Proteção de Senhas e Contas Pessoais",
+    "dificuldade": "fácil",
+    "pergunta": "Senhas longas são mais seguras do que senhas curtas?",
+    "tipo": "escala",
+    "respostaCorreta": 5,
+    "escala": "1-5 (5 = muito segura)",
+    "explicacao": "Senhas com 12+ caracteres são muito mais difíceis de quebrar."
+  },
+  {
+    "categoria": "Proteção de Senhas e Contas Pessoais",
+    "dificuldade": "fácil",
+    "pergunta": "É recomendável usar informações pessoais, como data de nascimento, em senhas?",
+    "tipo": "escala",
+    "respostaCorreta": 1,
+    "escala": "1-5 (1 = nada seguro)",
+    "explicacao": "Dados pessoais são previsíveis. Nota 1 na escala de segurança."
+  },
+  {
+    "categoria": "Proteção de Senhas e Contas Pessoais",
+    "dificuldade": "fácil",
+    "pergunta": "Ter uma senha única para cada conta é essencial para a segurança.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Isso evita o efeito dominó se uma senha for vazada."
+  },
+  {
+    "categoria": "Proteção de Senhas e Contas Pessoais",
+    "dificuldade": "fácil",
+    "pergunta": "Reutilizar senhas antigas após algum tempo é uma prática segura.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "Senhas antigas podem ter sido vazadas em breaches anteriores."
+  },
+  {
+    "categoria": "Proteção de Senhas e Contas Pessoais",
+    "dificuldade": "fácil",
+    "pergunta": "A verificação em duas etapas pode prevenir acessos não autorizados, mesmo que a senha seja comprometida.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "O 2FA exige uma segunda forma de autenticação além da senha."
+  },
+  {
+    "categoria": "Proteção de Senhas e Contas Pessoais",
+    "dificuldade": "fácil",
+    "pergunta": "Em uma escala de 1 a 5, quão seguro é ativar a autenticação de dois fatores (2FA) em suas contas?",
+    "tipo": "escala",
+    "respostaCorreta": 5,
+    "escala": "1-5 (5 = muito seguro)",
+    "explicacao": "2FA é uma das melhores camadas de proteção disponíveis."
+  },
+  {
+    "categoria": "Proteção de Senhas e Contas Pessoais",
+    "dificuldade": "fácil",
+    "pergunta": "Em uma escala de 1 a 5, quão seguro é compartilhar senhas com amigos ou familiares?",
+    "tipo": "escala",
+    "respostaCorreta": 1,
+    "escala": "1-5 (1 = nada seguro)",
+    "explicacao": "Compartilhar senhas, mesmo com conhecidos, é altamente desaconselhado."
+  },
+  {
+    "categoria": "Proteção de Senhas e Contas Pessoais",
+    "dificuldade": "fácil",
+    "pergunta": "A autenticação biométrica (como impressão digital) é mais segura do que senhas?",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Biometria é única e mais difícil de ser replicada do que senhas."
+  },
+  {
+    "categoria": "Proteção de Senhas e Contas Pessoais",
+    "dificuldade": "fácil",
+    "pergunta": "É seguro usar redes públicas de Wi-Fi para acessar contas pessoais?",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "Redes públicas podem ser monitoradas por criminosos. Use VPN se necessário."
+  },
+  {
+    "categoria": "Proteção de Senhas e Contas Pessoais",
+    "dificuldade": "fácil",
+    "pergunta": "Senhas com sequências óbvias (como '123456') são fáceis de adivinhar?",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Sequências simples são as primeiras testadas em ataques de força bruta."
+  },
+  {
+    "categoria": "Proteção de Senhas e Contas Pessoais",
+    "dificuldade": "fácil",
+    "pergunta": "É recomendável usar a função 'Lembrar senha' em computadores públicos?",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "Isso pode deixar suas credenciais armazenadas em dispositivos inseguros."
+  },
+  {
+    "categoria": "Proteção de Senhas e Contas Pessoais",
+    "dificuldade": "fácil",
+    "pergunta": "Senhas únicas para cada conta são essenciais para a segurança?",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Evita que um vazamento comprometa múltiplas contas."
+  },
+  {
+    "categoria": "Proteção de Senhas e Contas Pessoais",
+    "dificuldade": "fácil",
+    "pergunta": "É seguro reutilizar senhas antigas após algum tempo?",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "Senhas antigas podem ter sido expostas em violações de dados anteriores."
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {
+    "categoria": "Compras Online e Sites Falsos",
+    "dificuldade": "fácil",
+    "pergunta": "Um site seguro para compras sempre começa com 'http' e não precisa de cadeado na barra de endereços.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "Sites seguros usam 'https://' (com 's') e mostram um cadeado, indicando que a conexão é criptografada."
+  },
+  {
+    "categoria": "Compras Online e Sites Falsos",
+    "dificuldade": "fácil",
+    "pergunta": "Avaliações de produtos podem ajudar a evitar fraudes ou produtos de baixa qualidade.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Avaliações genuínas de outros consumidores são um bom indicador da qualidade e confiabilidade do produto/vendedor."
+  },
+  {
+    "categoria": "Compras Online e Sites Falsos",
+    "dificuldade": "fácil",
+    "pergunta": "Nunca é necessário verificar a política de devolução ao comprar online.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "A política de devolução é essencial para garantir seus direitos caso haja problemas com o produto."
+  },
+  {
+    "categoria": "Compras Online e Sites Falsos",
+    "dificuldade": "fácil",
+    "pergunta": "Se um site oferece promoções muito boas para serem verdade, pode ser golpe.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Ofertas irreais são uma tática comum de golpistas para atrair vítimas."
+  },
+  {
+    "categoria": "Compras Online e Sites Falsos",
+    "dificuldade": "fácil",
+    "pergunta": "Desconfiar de e-mails que pedem informações pessoais ou bancárias é uma prática segura.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Empresas legítimas não solicitam dados sensíveis por e-mail."
+  },
+  {
+    "categoria": "Compras Online e Sites Falsos",
+    "dificuldade": "fácil",
+    "pergunta": "É sempre seguro comprar através de anúncios em sites como Facebook e Instagram que te direcionam para marketplaces.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "Muitos golpes começam com anúncios falsos em redes sociais. Sempre verifique a reputação do vendedor."
+  },
+  {
+    "categoria": "Compras Online e Sites Falsos",
+    "dificuldade": "fácil",
+    "pergunta": "É seguro comprar em redes Wi-Fi públicas sem usar uma conexão VPN.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "Redes públicas podem ser monitoradas por criminosos. Use VPN para proteger seus dados."
+  },
+  {
+    "categoria": "Compras Online e Sites Falsos",
+    "dificuldade": "fácil",
+    "pergunta": "Cupons de desconto enviados por remetentes desconhecidos podem ser phishing (um tipo de ataque cibernético).",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Golpistas usam cupons falsos como isca para roubar dados ou instalar malware."
+  },
+  {
+    "categoria": "Compras Online e Sites Falsos",
+    "dificuldade": "médio",
+    "pergunta": "É importante revisar os termos e condições de uma loja antes de finalizar a compra.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Os termos detalham políticas importantes como prazos, devoluções e responsabilidades."
+  },
+  {
+    "categoria": "Compras Online e Sites Falsos",
+    "dificuldade": "médio",
+    "pergunta": "Mesmo que um site não tenha política de privacidade, ele ainda pode ser seguro para compras.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "A política de privacidade é obrigatória e mostra como a loja protege seus dados pessoais."
+  },
+  {
+    "categoria": "Compras Online e Sites Falsos",
+    "dificuldade": "médio",
+    "pergunta": "Sites fraudulentos podem copiar o layout de sites famosos para enganar os consumidores.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Golpistas replicam designs de lojas conhecidas para parecerem legítimos."
+  },
+  {
+    "categoria": "Compras Online e Sites Falsos",
+    "dificuldade": "médio",
+    "pergunta": "Se um site oferece só boleto bancário como método de pagamento, é sinal de segurança.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "A falta de opções seguras (como cartão com proteção) pode indicar golpe. Boletos são alvos comuns de fraudes."
+  },
+  {
+    "categoria": "Compras Online e Sites Falsos",
+    "dificuldade": "médio",
+    "pergunta": "Certificados digitais, como SSL, garantem que um site é 100% livre de fraudes.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "SSL protege a conexão, mas não atesta a idoneidade da loja. Golpistas também podem usar SSL."
+  },
+  {
+    "categoria": "Compras Online e Sites Falsos",
+    "dificuldade": "médio",
+    "pergunta": "O histórico de reclamações em sites como Reclame Aqui pode ser um bom indicador da reputação de uma loja.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Plataformas de reclamações revelam problemas reais enfrentados por consumidores."
+  },
+  {
+    "categoria": "Compras Online e Sites Falsos",
+    "dificuldade": "médio",
+    "pergunta": "Se um e-commerce tem selos de verificação de segurança falsificados, ele ainda pode ser confiável.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "Selos falsos são um sinal claro de má-fé. Desconfie de sites que usam esse artifício."
+  },
+  {
+    "categoria": "Compras Online e Sites Falsos",
+    "dificuldade": "difícil",
+    "pergunta": "Um certificado EV SSL fornece informações verificadas sobre a identidade da empresa.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "O EV SSL (Extended Validation) exige verificação rigorosa da empresa antes da emissão."
+  },
+  {
+    "categoria": "Compras Online e Sites Falsos",
+    "dificuldade": "difícil",
+    "pergunta": "Ataques de cross-site scripting (XSS) podem roubar informações inseridas em formulários de pagamento.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "XSS explora vulnerabilidades para capturar dados sensíveis diretamente dos usuários."
+  },
+  {
+    "categoria": "Compras Online e Sites Falsos",
+    "dificuldade": "difícil",
+    "pergunta": "Ataques DDoS não representam risco para lojas virtuais, apenas para redes sociais.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "DDoS pode derrubar lojas virtuais, causando prejuízos financeiros e de reputação."
+  },
+  {
+    "categoria": "Compras Online e Sites Falsos",
+    "dificuldade": "difícil",
+    "pergunta": "Links patrocinados e postagens de lojas em redes sociais nunca são usados para phishing.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": false,
+    "explicacao": "Golpistas criam anúncios e páginas falsas em redes sociais para aplicar phishing."
+  },
+  {
+    "categoria": "Compras Online e Sites Falsos",
+    "dificuldade": "difícil",
+    "pergunta": "DNS hijacking pode redirecionar os usuários para sites falsos, mesmo que digitem o endereço correto.",
+    "tipo": "verdadeiro_falso",
+    "respostaCorreta": true,
+    "explicacao": "Esse ataque manipula o sistema de DNS para direcionar vítimas a versões falsas de sites legítimos."
+  }
+]
