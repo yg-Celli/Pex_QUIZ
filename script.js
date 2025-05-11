@@ -1,8 +1,9 @@
-// script.js - Código Completo e Atualizado (Compatível com Acentos)
+// script.js - Versão Final com Acentos e Seleção Randômica
 
 /* ========== CONFIGURAÇÕES ========== */
 const config = {
-    caminhoJSON: './dados/perguntas.json' // Caminho correto do JSON
+    caminhoJSON: './dados/perguntas.json',
+    questoesPorTopico: 10 // Quantidade de questões por tópico
 };
 
 /* ========== ELEMENTOS HTML ========== */
@@ -19,8 +20,7 @@ const elementos = {
 let quiz = {
     perguntas: [],
     atual: 0,
-    acertos: 0,
-    dificuldade: new URLSearchParams(window.location.search).get('dificuldade') || 'facil'
+    acertos: 0
 };
 
 /* ========== FUNÇÃO PRINCIPAL ========== */
@@ -37,21 +37,33 @@ async function iniciarQuiz() {
         const resposta = await fetch(config.caminhoJSON);
         if (!resposta.ok) throw new Error('Arquivo não encontrado!');
         
-        const dados = await resposta.json();
-        if (!Array.isArray(dados)) throw new Error("Formato inválido");
+        const todasPerguntas = await resposta.json();
+        if (!Array.isArray(todasPerguntas)) throw new Error("Formato inválido");
 
-        // Normaliza as dificuldades (remove acentos e espaços)
-        const normalizarTexto = (texto) => {
+        // Função para normalizar textos com acentos
+        const normalizar = (texto) => {
             return texto.toLowerCase()
-                .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos
+                .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
                 .trim();
         };
 
-        // Filtra as perguntas
-        const dificuldadeSelecionada = normalizarTexto(quiz.dificuldade);
-        quiz.perguntas = dados.filter(p => 
-            normalizarTexto(p.dificuldade) === dificuldadeSelecionada
-        );
+        // Agrupa perguntas por tópico (categoria)
+        const perguntasPorTopico = todasPerguntas.reduce((acc, pergunta) => {
+            const topico = normalizar(pergunta.categoria);
+            if (!acc[topico]) acc[topico] = [];
+            acc[topico].push(pergunta);
+            return acc;
+        }, {});
+
+        // Seleciona 10 perguntas aleatórias de cada tópico
+        quiz.perguntas = Object.values(perguntasPorTopico)
+            .flatMap(topico => 
+                embaralharArray(topico)
+                    .slice(0, config.questoesPorTopico)
+            );
+
+        // Mistura todas as perguntas selecionadas
+        quiz.perguntas = embaralharArray(quiz.perguntas);
 
         if (quiz.perguntas.length === 0) throw new Error('Nenhuma pergunta encontrada');
         
@@ -71,13 +83,21 @@ async function iniciarQuiz() {
 }
 
 /* ========== FUNÇÕES AUXILIARES ========== */
+function embaralharArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 function mostrarPergunta() {
     if (quiz.atual >= quiz.perguntas.length) return finalizarQuiz();
 
     const pergunta = quiz.perguntas[quiz.atual];
     
     // Atualiza interface
-    elementos.categoria.textContent = pergunta.categoria;
+    elementos.categoria.textContent = pergunta.categoria; // Mantém acentos originais
     elementos.contador.textContent = `${quiz.atual + 1}/${quiz.perguntas.length}`;
     elementos.progresso.style.width = `${((quiz.atual + 1)/quiz.perguntas.length)*100}%`;
 
