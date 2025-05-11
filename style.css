@@ -557,3 +557,110 @@ body {
     justify-content: center;
     margin-top: 2rem;
 }
+
+.quiz-container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.pergunta h3 {
+    font-size: 1.8rem;
+    color: var(--azul-principal);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.opcoes-vf, .opcoes-escala {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-opcao {
+    background: #f0f0f0;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    min-width: 150px;
+}
+
+.btn-opcao:hover {
+    background: var(--laranja-claro);
+    color: white;
+    transform: scale(1.05);
+}
+
+.btn-opcao.correta {
+    background: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+}
+
+.btn-opcao.incorreta {
+    background: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+}
+
+.feedback-positivo, .feedback-negativo {
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.feedback-positivo {
+    background: #d4edda;
+    color: #155724;
+}
+
+.feedback-negativo {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.barra-progresso {
+    background: #e9ecef;
+    height: 10px;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+#progresso {
+    background: var(--laranja-acento);
+    height: 100%;
+    width: 0%;
+    transition: width 0.4s ease-in-out;
+}
+
+#proximaPergunta {
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    background: var(--laranja-acento);
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.3s;
+}
+
+#proximaPergunta:hover {
+    background: var(--laranja-claro);
+}

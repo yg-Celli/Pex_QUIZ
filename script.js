@@ -1,9 +1,9 @@
-// script.js - Versão Final com Acentos e Seleção Randômica
+// script.js - Seleciona 10 questões aleatórias da mesma dificuldade
 
 /* ========== CONFIGURAÇÕES ========== */
 const config = {
     caminhoJSON: './dados/perguntas.json',
-    questoesPorTopico: 10 // Quantidade de questões por tópico
+    totalQuestoes: 10 // Total de questões no quiz
 };
 
 /* ========== ELEMENTOS HTML ========== */
@@ -20,52 +20,31 @@ const elementos = {
 let quiz = {
     perguntas: [],
     atual: 0,
-    acertos: 0
+    acertos: 0,
+    dificuldade: null
 };
 
 /* ========== FUNÇÃO PRINCIPAL ========== */
 async function iniciarQuiz() {
     try {
-        elementos.container.innerHTML = `
-            <div class="carregando">
-                <i class="fas fa-spinner fa-spin"></i>
-                <p>Carregando perguntas...</p>
-            </div>
-        `;
+        // 1. Obtém dificuldade da URL
+        const params = new URLSearchParams(window.location.search);
+        quiz.dificuldade = normalizarTexto(params.get('dificuldade') || 'facil');
 
-        // Carrega o JSON
+        // 2. Carrega e filtra perguntas
         const resposta = await fetch(config.caminhoJSON);
-        if (!resposta.ok) throw new Error('Arquivo não encontrado!');
-        
         const todasPerguntas = await resposta.json();
-        if (!Array.isArray(todasPerguntas)) throw new Error("Formato inválido");
+        
+        // 3. Filtra por dificuldade (com tratamento de acentos)
+        const perguntasFiltradas = todasPerguntas.filter(p => 
+            normalizarTexto(p.dificuldade) === quiz.dificuldade
+        );
 
-        // Função para normalizar textos com acentos
-        const normalizar = (texto) => {
-            return texto.toLowerCase()
-                .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-                .trim();
-        };
+        // 4. Embaralha e seleciona 10 questões
+        quiz.perguntas = embaralharArray(perguntasFiltradas)
+                          .slice(0, config.totalQuestoes);
 
-        // Agrupa perguntas por tópico (categoria)
-        const perguntasPorTopico = todasPerguntas.reduce((acc, pergunta) => {
-            const topico = normalizar(pergunta.categoria);
-            if (!acc[topico]) acc[topico] = [];
-            acc[topico].push(pergunta);
-            return acc;
-        }, {});
-
-        // Seleciona 10 perguntas aleatórias de cada tópico
-        quiz.perguntas = Object.values(perguntasPorTopico)
-            .flatMap(topico => 
-                embaralharArray(topico)
-                    .slice(0, config.questoesPorTopico)
-            );
-
-        // Mistura todas as perguntas selecionadas
-        quiz.perguntas = embaralharArray(quiz.perguntas);
-
-        if (quiz.perguntas.length === 0) throw new Error('Nenhuma pergunta encontrada');
+        if (quiz.perguntas.length === 0) throw new Error(`Nenhuma pergunta encontrada para dificuldade: ${quiz.dificuldade}`);
         
         mostrarPergunta();
 
@@ -74,6 +53,7 @@ async function iniciarQuiz() {
             <div class="erro-quiz">
                 <h3><i class="fas fa-exclamation-triangle"></i> Erro</h3>
                 <p>${erro.message}</p>
+                <p>Verifique se o JSON tem perguntas para esta dificuldade.</p>
                 <button onclick="window.location.href='dificuldade.html'" class="botao-iniciar">
                     <i class="fas fa-arrow-left"></i> Voltar
                 </button>
@@ -83,6 +63,12 @@ async function iniciarQuiz() {
 }
 
 /* ========== FUNÇÕES AUXILIARES ========== */
+function normalizarTexto(texto) {
+    return texto.toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos
+        .trim();
+}
+
 function embaralharArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -97,7 +83,7 @@ function mostrarPergunta() {
     const pergunta = quiz.perguntas[quiz.atual];
     
     // Atualiza interface
-    elementos.categoria.textContent = pergunta.categoria; // Mantém acentos originais
+    elementos.categoria.textContent = pergunta.categoria;
     elementos.contador.textContent = `${quiz.atual + 1}/${quiz.perguntas.length}`;
     elementos.progresso.style.width = `${((quiz.atual + 1)/quiz.perguntas.length)*100}%`;
 
@@ -144,10 +130,8 @@ function verificarResposta(botao, pergunta) {
     const respostaCorreta = pergunta.respostaCorreta.toString();
     const acertou = respostaUsuario === respostaCorreta;
 
-    // Atualiza estado
     if (acertou) quiz.acertos++;
 
-    // Feedback visual
     document.querySelectorAll('.btn-opcao').forEach(b => {
         b.disabled = true;
         b.classList.add(b.dataset.resposta === respostaCorreta ? 'correta' : 'incorreta');
