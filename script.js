@@ -1,232 +1,264 @@
-// Variáveis globais
-let perguntas = [];
-let perguntaAtual = 0;
-let pontuacao = 0;
-let dificuldadeSelecionada;
+// script.js - Código Completo para o Quiz de Segurança
 
-// Elementos DOM
-const elements = {
+/* ========== CONFIGURAÇÕES INICIAIS ========== */
+const config = {
+    caminhoJSON: './dados/perguntas.json'  // Caminho relativo ao arquivo JSON
+};
+
+/* ========== ELEMENTOS DA PÁGINA ========== */
+const elementos = {
     categoria: document.getElementById('categoriaAtual'),
-    perguntaContainer: document.getElementById('perguntaContainer'),
+    container: document.getElementById('perguntaContainer'),
     feedback: document.getElementById('feedback'),
-    proximoBtn: document.getElementById('proximaPergunta'),
+    btnProximo: document.getElementById('proximaPergunta'),
     contador: document.getElementById('contador'),
     progresso: document.getElementById('progresso')
 };
 
-// Inicialização com tratamento de erro robusto
-document.addEventListener('DOMContentLoaded', async () => {
+/* ========== ESTADO DO QUIZ ========== */
+let quiz = {
+    perguntas: [],
+    atual: 0,
+    acertos: 0,
+    dificuldade: new URLSearchParams(window.location.search).get('dificuldade') || 'facil'
+};
+
+/* ========== FUNÇÃO PRINCIPAL ========== */
+async function iniciarQuiz() {
     try {
-        // Verificação de ambiente local
-        if (window.location.href.startsWith('file://')) {
-            console.warn('Executando localmente - recomendo usar Live Server');
+        // Verifica se está rodando localmente
+        if (window.location.protocol === 'file:') {
+            mostrarErro(`
+                <h3><i class="fas fa-exclamation-triangle"></i> Execução Local Detectada</h3>
+                <p>Para o quiz funcionar corretamente:</p>
+                <ol>
+                    <li>Instale a extensão <strong>Live Server</strong> no VS Code</li>
+                    <li>Clique com o direito no arquivo <em>quiz.html</em></li>
+                    <li>Selecione <strong>"Open with Live Server"</strong></li>
+                </ol>
+                <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" 
+                   target="_blank" class="botao-iniciar">
+                    <i class="fas fa-download"></i> Instalar Live Server
+                </a>
+            `);
+            return;
         }
 
-        const urlParams = new URLSearchParams(window.location.search);
-        dificuldadeSelecionada = urlParams.get('dificuldade') || 'facil';
-        
-        // Estado de carregamento
-        elements.categoria.textContent = "Carregando...";
-        elements.perguntaContainer.innerHTML = `
-            <div class="loading">
-                <i class="fas fa-spinner fa-spin"></i>
-                <p>Preparando seu desafio de segurança...</p>
-            </div>
-        `;
+        // Mostra carregamento
+        mostrarCarregamento();
 
-        // Carrega perguntas
-        const response = await fetch('./dados/perguntas.json');
+        // Carrega as perguntas
+        const resposta = await fetch(config.caminhoJSON);
+        if (!resposta.ok) throw new Error(`Erro: ${resposta.status} - ${resposta.statusText}`);
         
-        if (!response.ok) {
-            throw new Error(`Erro no servidor: ${response.status}`);
-        }
+        const dados = await resposta.json();
+        if (!Array.isArray(dados)) throw new Error("O arquivo JSON não contém uma lista de perguntas");
 
-        const todasPerguntas = await response.json();
-        
-        if (!Array.isArray(todasPerguntas)) {
-            throw new Error("Formato inválido: o arquivo deve conter um array de perguntas");
-        }
+        // Filtra perguntas pela dificuldade
+        quiz.perguntas = dados.filter(p => p.dificuldade === quiz.dificuldade);
+        if (quiz.perguntas.length === 0) throw new Error(`Nenhuma pergunta encontrada para: ${quiz.dificuldade}`);
 
-        perguntas = todasPerguntas.filter(p => p.dificuldade === dificuldadeSelecionada);
-        
-        if (perguntas.length === 0) {
-            throw new Error(`Nenhuma pergunta encontrada para o nível: ${dificuldadeSelecionada}`);
-        }
-
+        // Mostra a primeira pergunta
         mostrarPergunta();
-        
-    } catch (error) {
-        console.error("Erro no quiz:", error);
-        elements.perguntaContainer.innerHTML = `
-            <div class="erro">
-                <h3><i class="fas fa-exclamation-triangle"></i> Ops, algo deu errado!</h3>
-                <p><strong>Detalhe:</strong> ${error.message}</p>
-                
-                <div class="dicas">
-                    <p>🔍 Verifique:</p>
-                    <ul>
-                        <li>Se o arquivo <strong>perguntas.json</strong> existe na pasta /dados</li>
-                        <li>Se o servidor está rodando corretamente</li>
-                        <li>Se o JSON está sem erros de formatação</li>
-                    </ul>
-                </div>
 
-                <div class="acoes-erro">
-                    <a href="dificuldade.html" class="botao-iniciar">
-                        <i class="fas fa-arrow-left"></i> Voltar
-                    </a>
-                    <button onclick="location.reload()" class="botao-iniciar">
-                        <i class="fas fa-sync-alt"></i> Tentar novamente
-                    </button>
-                </div>
+    } catch (erro) {
+        console.error("Erro no quiz:", erro);
+        mostrarErro(`
+            <h3><i class="fas fa-times-circle"></i> Erro ao Carregar</h3>
+            <p><strong>Motivo:</strong> ${erro.message}</p>
+            
+            <div class="dicas">
+                <p>🛠️ Por favor verifique:</p>
+                <ul>
+                    <li>Se o arquivo <code>perguntas.json</code> existe na pasta <code>/dados</code></li>
+                    <li>Se está usando <strong>Live Server</strong> (não abra direto o arquivo)</li>
+                    <li>Se o JSON está formatado corretamente (sem vírgulas extras)</li>
+                </ul>
             </div>
-        `;
+            
+            <div class="botoes-acao">
+                <button onclick="window.location.href='dificuldade.html'" class="botao-iniciar">
+                    <i class="fas fa-arrow-left"></i> Voltar
+                </button>
+                <button onclick="window.location.reload()" class="botao-iniciar">
+                    <i class="fas fa-sync-alt"></i> Recarregar
+                </button>
+            </div>
+        `);
     }
-});
+}
 
-// Mostra a pergunta atual
+/* ========== FUNÇÕES AUXILIARES ========== */
+function mostrarCarregamento() {
+    elementos.container.innerHTML = `
+        <div class="carregando">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Preparando seu desafio de segurança...</p>
+        </div>
+    `;
+}
+
+function mostrarErro(mensagem) {
+    elementos.container.innerHTML = `
+        <div class="erro-quiz">
+            ${mensagem}
+        </div>
+    `;
+}
+
 function mostrarPergunta() {
-    if (perguntaAtual >= perguntas.length) {
+    // Verifica se acabaram as perguntas
+    if (quiz.atual >= quiz.perguntas.length) {
         finalizarQuiz();
         return;
     }
 
-    const p = perguntas[perguntaAtual];
-    elements.categoria.textContent = p.categoria;
-    elements.contador.textContent = `${perguntaAtual + 1}/${perguntas.length}`;
-    elements.progresso.style.width = `${((perguntaAtual + 1) / perguntas.length) * 100}%`;
+    const pergunta = quiz.perguntas[quiz.atual];
 
-    let html = `<h3>${p.pergunta}</h3>`;
+    // Atualiza cabeçalho
+    elementos.categoria.textContent = pergunta.categoria;
+    elementos.contador.textContent = `${quiz.atual + 1}/${quiz.perguntas.length}`;
+    elementos.progresso.style.width = `${((quiz.atual + 1) / quiz.perguntas.length) * 100}%`;
+
+    // Monta a pergunta
+    let html = `<h3>${pergunta.pergunta}</h3>`;
     
-    // Renderiza conforme o tipo de pergunta
-    if (p.tipo === "verdadeiro_falso") {
+    // Adiciona opções conforme o tipo
+    if (pergunta.tipo === "verdadeiro_falso") {
         html += `
-            <div class="opcoes-verdadeiro-falso">
-                <button class="opcao-btn" data-resposta="true">Verdadeiro</button>
-                <button class="opcao-btn" data-resposta="false">Falso</button>
+            <div class="opcoes-vf">
+                <button class="btn-opcao" data-resposta="true">Verdadeiro</button>
+                <button class="btn-opcao" data-resposta="false">Falso</button>
             </div>
         `;
-    } else if (p.tipo === "escala") {
+    } 
+    else if (pergunta.tipo === "escala") {
         html += `
             <div class="opcoes-escala">
                 ${[1, 2, 3, 4, 5].map(num => `
-                    <button class="opcao-btn" data-resposta="${num}">${num}</button>
+                    <button class="btn-opcao" data-resposta="${num}">${num}</button>
                 `).join('')}
-                <div class="rotulos-escala">
+                <div class="legenda-escala">
                     <span>1 (Nada seguro)</span>
                     <span>5 (Muito seguro)</span>
                 </div>
             </div>
         `;
-    } else {
-        // Múltipla escolha padrão
-        html += p.opcoes.map((opcao, i) => `
-            <button class="opcao-btn" data-resposta="${i}">${opcao}</button>
+    } 
+    else {
+        // Padrão: múltipla escolha
+        html += pergunta.opcoes.map((opcao, i) => `
+            <button class="btn-opcao" data-resposta="${i}">${opcao}</button>
         `).join('');
     }
 
-    elements.perguntaContainer.innerHTML = html;
-    elements.feedback.innerHTML = '';
-    elements.proximoBtn.classList.add('escondido');
+    elementos.container.innerHTML = html;
+    elementos.feedback.innerHTML = '';
+    elementos.btnProximo.classList.add('escondido');
 
-    // Event listeners para as opções
-    document.querySelectorAll('.opcao-btn').forEach(btn => {
-        btn.addEventListener('click', () => verificarResposta(btn));
+    // Adiciona eventos aos botões
+    document.querySelectorAll('.btn-opcao').forEach(botao => {
+        botao.addEventListener('click', () => verificarResposta(botao, pergunta));
     });
 }
 
-// Verifica a resposta selecionada
-function verificarResposta(btnSelecionado) {
-    const p = perguntas[perguntaAtual];
-    const respostaUsuario = btnSelecionado.dataset.resposta;
+function verificarResposta(botao, pergunta) {
+    const respostaUsuario = botao.dataset.resposta;
     let respostaCorreta;
 
     // Determina a resposta correta conforme o tipo
-    if (p.tipo === "verdadeiro_falso") {
-        respostaCorreta = p.respostaCorreta.toString();
-    } else if (p.tipo === "escala") {
-        respostaCorreta = p.respostaCorreta;
-    } else {
-        respostaCorreta = p.respostaCorreta.toString();
+    if (pergunta.tipo === "verdadeiro_falso") {
+        respostaCorreta = pergunta.respostaCorreta.toString();
+    } 
+    else if (pergunta.tipo === "escala") {
+        respostaCorreta = pergunta.respostaCorreta;
+    } 
+    else {
+        respostaCorreta = pergunta.respostaCorreta.toString();
     }
 
+    // Verifica se acertou
     const acertou = respostaUsuario === respostaCorreta.toString();
 
-    // Atualiza pontuação
+    // Atualiza interface
     if (acertou) {
-        pontuacao++;
-        btnSelecionado.classList.add('correto');
-        elements.feedback.innerHTML = `
-            <div class="feedback-correto">
+        quiz.acertos++;
+        botao.classList.add('correta');
+        elementos.feedback.innerHTML = `
+            <div class="feedback-positivo">
                 <i class="fas fa-check-circle"></i>
-                <p>Correto! ${p.explicacao}</p>
+                <p>Correto! ${pergunta.explicacao}</p>
             </div>
         `;
     } else {
-        btnSelecionado.classList.add('incorreto');
-        elements.feedback.innerHTML = `
-            <div class="feedback-incorreto">
+        botao.classList.add('incorreta');
+        elementos.feedback.innerHTML = `
+            <div class="feedback-negativo">
                 <i class="fas fa-times-circle"></i>
-                <p>Incorreto. ${p.explicacao}</p>
+                <p>Incorreto. ${pergunta.explicacao}</p>
             </div>
         `;
     }
 
-    // Destaca a resposta correta
-    document.querySelectorAll('.opcao-btn').forEach(btn => {
-        btn.disabled = true;
-        if (btn.dataset.resposta === respostaCorreta.toString()) {
-            btn.classList.add('correto');
+    // Destaca resposta correta e desabilita botões
+    document.querySelectorAll('.btn-opcao').forEach(b => {
+        b.disabled = true;
+        if (b.dataset.resposta === respostaCorreta.toString()) {
+            b.classList.add('correta');
         }
     });
 
-    elements.proximoBtn.classList.remove('escondido');
+    elementos.btnProximo.classList.remove('escondido');
 }
 
-// Finaliza o quiz
 function finalizarQuiz() {
-    const percentual = Math.round((pontuacao / perguntas.length) * 100);
+    const percentual = Math.round((quiz.acertos / quiz.perguntas.length) * 100);
     let mensagem, icone;
 
     if (percentual >= 80) {
-        mensagem = "Excelente! Você domina segurança digital!";
+        mensagem = "Parabéns! Você é um expert em segurança digital!";
         icone = "fas fa-trophy";
-    } else if (percentual >= 50) {
-        mensagem = "Bom trabalho! Continue aprendendo.";
+    } 
+    else if (percentual >= 50) {
+        mensagem = "Bom trabalho! Continue aprendendo sobre segurança.";
         icone = "fas fa-thumbs-up";
-    } else {
-        mensagem = "Continue praticando! Segurança é essencial.";
+    } 
+    else {
+        mensagem = "Continue praticando! A segurança digital é essencial.";
         icone = "fas fa-book";
     }
 
-    elements.perguntaContainer.innerHTML = `
-        <div class="resultado-final">
+    elementos.container.innerHTML = `
+        <div class="tela-resultado">
             <div class="cabecalho-resultado">
                 <i class="${icone}"></i>
                 <h3>Quiz Concluído!</h3>
             </div>
             
-            <div class="pontuacao">
-                <span class="destaque">${pontuacao}/${perguntas.length}</span>
-                <span class="porcentagem">${percentual}% de acertos</span>
+            <div class="pontuacao-final">
+                <span class="acertos">${quiz.acertos}/${quiz.perguntas.length}</span>
+                <span class="porcentagem">${percentual}% de acerto</span>
             </div>
             
             <p class="mensagem-final">${mensagem}</p>
             
-            <div class="botoes-resultado">
+            <div class="botoes-reinicio">
                 <a href="dificuldade.html" class="botao-iniciar">
-                    <i class="fas fa-redo"></i> Tentar novamente
+                    <i class="fas fa-redo"></i> Novo Quiz
                 </a>
                 <a href="index.html" class="botao-iniciar">
-                    <i class="fas fa-home"></i> Voltar ao início
+                    <i class="fas fa-home"></i> Página Inicial
                 </a>
             </div>
         </div>
     `;
 }
 
-// Evento para próxima pergunta
-elements.proximoBtn.addEventListener('click', () => {
-    perguntaAtual++;
+/* ========== EVENTO DE PRÓXIMA PERGUNTA ========== */
+elementos.btnProximo.addEventListener('click', () => {
+    quiz.atual++;
     mostrarPergunta();
 });
+
+/* ========== INICIA O QUIZ QUANDO A PÁGINA CARREGAR ========== */
+document.addEventListener('DOMContentLoaded', iniciarQuiz);
