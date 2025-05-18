@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drummond Secure - Material de Estudo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos específicos para esta página */
+        .introducao-conteudo {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1rem;
+        }
+        
+        .abas-conteudo {
+            max-width: 1000px;
+            margin: 0 auto 3rem;
+        }
+        
+        .controle-abas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            justify-content: center;
+        }
+        
+        .controle-abas button {
+            background: #f0f0f0;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .controle-abas button.aba-ativo {
+            background: var(--laranja-acento);
+            color: white;
+        }
+        
+        .conteudo-abas {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .aba-conteudo {
+            display: none;
+        }
+        
+        .aba-conteudo.ativo {
+            display: block;
+        }
+        
+        .dica {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--laranja-acento);
+        }
+        
+        .dica h4 {
+            color: var(--azul-principal);
+            margin-bottom: 0.8rem;
+        }
+        
+        .dica ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .dica li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.8rem;
+        }
+        
+        .dica li i {
+            color: var(--laranja-acento);
+            position: absolute;
+            left: 0;
+            top: 0.2rem;
+        }
+        
+        .link-util {
+            margin-top: 1.5rem;
+        }
+        
+        .link-util a {
+            color: var(--azul-principal);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .link-util a:hover {
+            text-decoration: underline;
+        }
+        
+        .referencias {
+            background: rgba(11, 58, 104, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 3rem auto;
+            max-width: 1000px;
+        }
+        
+        .referencias h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--azul-principal);
+        }
+        
+        .grid-referencias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .card-referencia {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .card-referencia h4 {
+            color: var(--azul-principal);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+        
+        .card-referencia ul {
+            list-style: none;
+            padding-left: 1rem;
+        }
+        
+        .card-referencia li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .card-referencia li:before {
+            content: "•";
+            color: var(--laranja-acento);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        
+        .cta-quiz {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .cta-quiz p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .botao-quiz {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--laranja-acento);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .botao-quiz:hover {
+            background: var(--laranja-claro);
+        }
+    </style>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container">
+            <div class="logo">
+                <div class="icone-seguranca">
+                    <div class="hexagon"></div>
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h1>Drummond Secure</h1>
+            </div>
+            <nav class="navegacao">
+                <ul class="menu">
+                    <li><a href="index.html" class="menu-link">HOME</a></li>
+                    <li><a href="conteudo.html" class="menu-link ativo">MATERIAL</a></li>
+                    <li><a href="dificuldade.html" class="menu-link">QUIZ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="conteudo-principal">
+        <!-- Seção de Introdução -->
+        <section class="introducao-conteudo">
+            <h2><i class="fas fa-graduation-cap"></i> Material de Estudo</h2>
+            <p>Prepare-se para o quiz com estes recursos sobre segurança digital:</p>
+        </section>
+
+        <!-- Conteúdo Organizado em Abas -->
+        <div class="abas-conteudo">
+            <div class="controle-abas">
+                <button class="aba-ativo" data-aba="phishing">Phishing</button>
+                <button data-aba="senhas">Senhas</button>
+                <button data-aba="compras">Compras Online</button>
+                <button data-aba="terceiros">Compartilhamento</button>
+                <button data-aba="golpes">Golpes Telefônicos</button>
+            </div>
+
+            <!-- Conteúdo das Abas -->
+            <div class="conteudo-abas">
+                <!-- Aba 1: Phishing -->
+                <div id="phishing" class="aba-conteudo ativo">
+                    <h3><i class="fas fa-fish"></i> Phishing e Fraudes</h3>
+                    <div class="dica">
+                        <h4>O que é?</h4>
+                        <p>Tentativas de enganar você para revelar informações pessoais através de e-mails, mensagens ou sites falsos.</p>
+                    </div>
+                    <div class="dica">
+                        <h4>Como identificar:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Remetentes desconhecidos ou imitando empresas</li>
+                            <li><i class="fas fa-check-circle"></i> Erros gramaticais e ortográficos</li>
+                            <li><i class="fas fa-check-circle"></i> URLs que não correspondem ao site oficial</li>
+                        </ul>
+                    </div>
+                    <div class="dica">
+                        <h4>Como se proteger:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Nunca clique em links suspeitos</li>
+                            <li><i class="fas fa-check-circle"></i> Verifique sempre o certificado SSL do site (cadeado no navegador)</li>
+                            <li><i class="fas fa-check-circle"></i> Desconfie de mensagens urgentes ou ameaçadoras</li>
+                        </ul>
+                    </div>
+                    <div class="link-util">
+                        <a href="https://www.cert.br/docs/whitepapers/phishing/" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Guia completo sobre phishing (CERT.br)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Aba 2: Senhas -->
+                <div id="senhas" class="aba-conteudo">
+                    <h3><i class="fas fa-key"></i> Proteção de Senhas</h3>
+                    <div class="dica">
+                        <h4>Boas práticas:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Use senhas com mínimo de 12 caracteres</li>
+                            <li><i class="fas fa-check-circle"></i> Combine letras maiúsculas, minúsculas, números e símbolos</li>
+                            <li><i class="fas fa-check-circle"></i> Nunca reutilize senhas em múltiplos serviços</li>
+                            <li><i class="fas fa-check-circle"></i> Ative autenticação em dois fatores (2FA)</li>
+                        </ul>
+                    </div>
+                    <div class="dica">
+                        <h4>O que evitar:</h4>
+                        <ul>
+                            <li><i class="fas fa-times-circle"></i> Informações pessoais (nomes, datas, números sequenciais)</li>
+                            <li><i class="fas fa-times-circle"></i> Senhas óbvias como "123456" ou "senha"</li>
+                            <li><i class="fas fa-times-circle"></i> Compartilhamento por mensagens ou e-mail</li>
+                        </ul>
+                    </div>
+                    <div class="link-util">
+                        <a href="https://www.howtogeek.com/195430/how-to-create-a-strong-password-and-remember-it/" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Como criar senhas seguras (How-To Geek)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Aba 3: Compras Online -->
+                <div id="compras" class="aba-conteudo">
+                    <h3><i class="fas fa-shopping-cart"></i> Compras Online Seguras</h3>
+                    <div class="dica">
+                        <h4>Sinais de site confiável:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> URL começa com "https://" e tem cadeado</li>
+                            <li><i class="fas fa-check-circle"></i> Políticas de privacidade e termos claros</li>
+                            <li><i class="fas fa-check-circle"></i> Informações de contato e CNPJ visíveis</li>
+                        </ul>
+                    </div>
+                    <div class="dica">
+                        <h4>Riscos comuns:</h4>
+                        <ul>
+                            <li><i class="fas fa-times-circle"></i> Ofertas "boas demais para ser verdade"</li>
+                            <li><i class="fas fa-times-circle"></i> Sites que só aceitam boleto ou transferência</li>
+                            <li><i class="fas fa-times-circle"></i> Pedidos de dados excessivos no cadastro</li>
+                        </ul>
+                    </div>
+                    <div class="link-util">
+                        <a href="https://www.procon.sp.gov.br/compras-pela-internet/" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Guia Procon para compras online
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Aba 4: Compartilhamento com Terceiros -->
+                <div id="terceiros" class="aba-conteudo">
+                    <h3><i class="fas fa-share-alt"></i> Compartilhamento Seguro</h3>
+                    <div class="dica">
+                        <h4>Dados sensíveis (nunca compartilhe):</h4>
+                        <ul>
+                            <li><i class="fas fa-lock"></i> Senhas e credenciais de acesso</li>
+                            <li><i class="fas fa-lock"></i> Números de documentos completos</li>
+                            <li><i class="fas fa-lock"></i> Dados bancários e cartões de crédito</li>
+                        </ul>
+                    </div>
+                    <div class="dica">
+                        <h4>Boas práticas:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Use serviços com criptografia (ex: compartilhamento de arquivos)</li>
+                            <li><i class="fas fa-check-circle"></i> Revise permissões de aplicativos regularmente</li>
+                            <li><i class="fas fa-check-circle"></i> Prefira links temporários para compartilhamento</li>
+                        </ul>
+                    </div>
+                    <div class="link-util">
+                        <a href="https://www.kaspersky.com.br/resource-center/definitions/encryption" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Entenda sobre criptografia (Kaspersky)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Aba 5: Golpes Telefônicos -->
+                <div id="golpes" class="aba-conteudo">
+                    <h3><i class="fas fa-phone"></i> Golpes Telefônicos</h3>
+                    <div class="dica">
+                        <h4>Táticas comuns:</h4>
+                        <ul>
+                            <li><i class="fas fa-exclamation-triangle"></i> Falsos suportes técnicos (Microsoft, operadoras)</li>
+                            <li><i class="fas fa-exclamation-triangle"></i> Promoções e prêmios falsos</li>
+                            <li><i class="fas fa-exclamation-triangle"></i> Cobranças de dívidas inexistentes</li>
+                        </ul>
+                    </div>
+                    <div class="dica">
+                        <h4>Como se proteger:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Nunca forneça senhas ou dados por telefone</li>
+                            <li><i class="fas fa-check-circle"></i> Desligue e contate a empresa por canais oficiais</li>
+                            <li><i class="fas fa-check-circle"></i> Não conceda acesso remoto ao seu dispositivo</li>
+                        </ul>
+                    </div>
+                    <div class="link-util">
+                        <a href="https://www.consumidor.gov.br/pages/duvida/telemarketing" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Saiba como bloquear ligações indesejadas
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção de Referências -->
+        <section class="referencias">
+            <h3><i class="fas fa-book-open"></i> Referências Bibliográficas</h3>
+            <div class="grid-referencias">
+                <div class="card-referencia">
+                    <h4>Normas e Legislação</h4>
+                    <ul>
+                        <li>GDPR - Regulamento Geral de Proteção de Dados (UE)</li>
+                        <li>LGPD - Lei Geral de Proteção de Dados (Brasil)</li>
+                        <li>Marco Civil da Internet (Lei 12.965/2014)</li>
+                    </ul>
+                </div>
+                <div class="card-referencia">
+                    <h4>Fontes Técnicas</h4>
+                    <ul>
+                        <li>CERT.br - Centro de Estudos em Segurança</li>
+                        <li>OWASP - Projeto de Segurança em Aplicações</li>
+                        <li>Kaspersky Threat Intelligence</li>
+                    </ul>
+                </div>
+                <div class="card-referencia">
+                    <h4>Órgãos Oficiais</h4>
+                    <ul>
+                        <li>Procon-SP - Orientações ao Consumidor</li>
+                        <li>ANPD - Autoridade Nacional de Proteção de Dados</li>
+                        <li>FTC - Comissão Federal de Comércio (EUA)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA para o Quiz -->
+        <div class="cta-quiz">
+            <p>Pronto para testar seus conhecimentos?</p>
+            <a href="dificuldade.html" class="botao-quiz">
+                Iniciar Quiz <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </main>
+
+    <script>
+        // Controle das abas
+        document.querySelectorAll('.controle-abas button').forEach(botao => {
+            botao.addEventListener('click', () => {
+                // Remove classe ativa de todos os botões
+                document.querySelectorAll('.controle-abas button').forEach(btn => {
+                    btn.classList.remove('aba-ativo');
+                });
+                
+                // Adiciona classe ativa ao botão clicado
+                botao.classList.add('aba-ativo');
+                
+                // Esconde todos os conteúdos
+                document.querySelectorAll('.aba-conteudo').forEach(aba => {
+                    aba.classList.remove('ativo');
+                });
+                
+                // Mostra o conteúdo correspondente
+                const abaId = botao.dataset.aba;
+                document.getElementById(abaId).classList.add('ativo');
+            });
+        });
+    </script>
+</body>
+</html>

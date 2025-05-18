@@ -664,3 +664,129 @@ body {
 #proximaPergunta:hover {
     background: var(--laranja-claro);
 }
+
+.recomendacao-conteudo {
+    background: rgba(236, 64, 26, 0.08);
+    border-left: 4px solid var(--laranja-acento);
+    padding: 1rem;
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.recomendacao-conteudo i {
+    color: var(--laranja-acento);
+    font-size: 1.5rem;
+    margin-top: 0.2rem;
+}
+
+.recomendacao-conteudo p {
+    margin: 0;
+    flex: 1;
+}
+
+.link-destaque {
+    color: var(--azul-principal);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px dotted var(--laranja-acento);
+    transition: all 0.3s;
+}
+
+.link-destaque:hover {
+    color: var(--laranja-acento);
+    border-bottom-style: solid;
+}
+
+/* Estilos específicos para a página de conteúdo */
+.conteudo-educativo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.topico-conteudo {
+    background: var(--branco);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--laranja-acento);
+    transition: transform 0.3s ease;
+}
+
+.topico-conteudo:hover {
+    transform: translateY(-5px);
+}
+
+.icone-topico {
+    font-size: 2.5rem;
+    color: var(--laranja-acento);
+    margin-bottom: 1rem;
+}
+
+.detalhes-conteudo {
+    margin-top: 1rem;
+}
+
+.detalhes-conteudo ul {
+    margin-top: 1rem;
+    list-style: none;
+}
+
+.detalhes-conteudo li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.8rem;
+}
+
+.detalhes-conteudo li i {
+    color: var(--laranja-acento);
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+}
+
+@media (max-width: 768px) {
+    .conteudo-educativo {
+        grid-template-columns: 1fr;
+    }
+}
+
+.referencias {
+    background: rgba(11, 58, 104, 0.05);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 3rem;
+}
+
+.lista-referencias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.categoria-ref h4 {
+    color: var(--azul-principal);
+    margin-bottom: 0.8rem;
+}
+
+.categoria-ref ul {
+    list-style: none;
+}
+
+.categoria-ref li {
+    margin-bottom: 0.5rem;
+}
+
+.categoria-ref a {
+    color: var(--azul-escuro);
+    text-decoration: none;
+}
+
+.categoria-ref a:hover {
+    color: var(--laranja-acento);
+    text-decoration: underline;
+}
