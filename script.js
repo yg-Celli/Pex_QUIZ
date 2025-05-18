@@ -150,6 +150,10 @@ function verificarResposta(botao, pergunta) {
 function finalizarQuiz() {
     const percentual = Math.round((quiz.acertos / quiz.perguntas.length) * 100);
     
+    // Oculta o feedback e o botão de próxima pergunta
+    elementos.feedback.innerHTML = '';
+    elementos.btnProximo.classList.add('escondido');
+    
     elementos.container.innerHTML = `
         <div class="resultado-final">
             <h2><i class="fas fa-trophy"></i> Quiz Concluído!</h2>
